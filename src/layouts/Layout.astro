@@ -1,16 +1,22 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Astro Auth - SimioDev</title>
 	</head>
 	<body>
-		<slot />
+		<div id="root" class="w-full h-full flex items-center justify-center bg-cyan-950">
+			<slot />
+		</div>
 	</body>
 </html>
+
+<style is:global>
+	@import 'tailwindcss';
+</style>
 
 <style>
 	html,
