@@ -11,7 +11,6 @@ import { dark } from '@clerk/themes';
 //   locale: esES
 // }
 
-// https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
