@@ -1,14 +1,21 @@
 ---
- const { title } = Astro.props;
+import { site } from '../config/site';
+
+const {
+	title = site.name,
+	description = site.description,
+	lang = site.locale,
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
 	<body>

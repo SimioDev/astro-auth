@@ -1,10 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { OrganizationProfile, SignOutButton } from '@clerk/astro/components';
+import { SignOutButton, UserButton } from '@clerk/astro/components';
+import { site } from '../config/site';
 ---
 
-<Layout title="Privado - Astro Auth">
-    <p class="text-3xl font-bold text-white">Panel de gestión 🐒</p>
-    <p class="mt-5">Te has logueado correctamente! Solamente un usuario logueado lo podrá ver</p>
-    <SignOutButton class="mt-5 text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"/>
+<Layout title={`Dashboard - ${site.name}`}>
+  <main class="w-full max-w-3xl px-6 py-12">
+    <p class="text-sm uppercase tracking-[0.25em] text-slate-300">Área protegida</p>
+    <h1 class="mt-4 text-3xl font-bold text-white">Dashboard</h1>
+    <p class="mt-3 text-slate-200">
+      Solo usuarios autenticados pueden ver este contenido.
+    </p>
+
+    <div class="mt-6 flex flex-wrap items-center gap-3">
+      <UserButton showName />
+      <SignOutButton
+        class="text-white bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+      />
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6 text-slate-200">
+      <p>Coloca aquí la información privada de tu app.</p>
+      <p class="mt-2">Ejemplo: métricas, tablas, configuraciones o accesos rápidos.</p>
+    </div>
+  </main>
 </Layout>
